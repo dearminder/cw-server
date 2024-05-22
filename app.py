@@ -894,7 +894,7 @@ if __name__ == '__main__':
 		db.create_all()
 		update_thread = threading.Thread(target=scheduled_task)
 		update_thread.start()
-	app.run(debug=args.debug, port=args.port)
+	app.run(host='0.0.0.0', debug=args.debug, port=args.port)
 else:
 	Log("server", "Starting server...")
 	with app.app_context():
